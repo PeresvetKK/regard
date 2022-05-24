@@ -1,0 +1,827 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+@import "media";
+@import "mixins";
+@import "root";
+// font-family: 'Inter', sans-serif;
+// font-family: 'Roboto', sans-serif;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//Базовые стили body
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: $textHead;
+    background: $bgFrame;
+    cursor: default;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+section {
+    position: relative;
+}
+h1,h2,h3,h4{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: $textHead;
+    margin: 0;
+}
+//Создание базовых стилей для основных тегов
+h1 {
+    font-size: 38px;
+    line-height: 121%;
+}
+h2 {
+    font-size: 30px;
+    line-height: 127%;
+}
+h3 {
+    font-size: 24px;
+    line-height: 125%;
+}
+h4 {
+    font-size: 20px;
+    line-height: 130%;
+}
+h5{
+    font-size: 16px;
+    line-height: 125%;
+}
+
+span {
+}
+a {
+    
+    display: inline-block;
+    text-decoration: none;
+}
+svg {
+    min-height: 1rem;
+}
+img {
+    width: 100%;
+}
+blockquote {
+}
+// убирает цвет автокомплита у инпута
+input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        font-size: 1rem;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    outline: none;
+    box-shadow: none;
+    transition: box-shadow .3s, border .3s;
+}
+
+textarea,
+button,
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+
+    &[disabled] {
+        cursor: default;
+        opacity: 0.7;
+    }
+}
+button {
+    cursor: pointer;
+}
+
+//Стандартный враппер
+.wrapper {
+    margin: 0 auto;
+    max-width: 95%;
+    position: relative;
+    height: 100%;
+    margin-top: 19px;
+    
+}
+.textM{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+}
+.textS{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+}
+.descrM, .descrS, .btnL, .btnM, .btnS, .btnLink{
+    font-family: 'Inter', sans-serif;
+}
+.descrM{
+    font-size: 12px;
+    line-height: 15px;
+}
+.descrS{
+    font-size: 10px;
+    line-height: 12px;
+}
+.btnL{
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 500;
+    width: initial;
+    height: 48px;
+}
+.btnM{
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 500;
+}
+.btnS{
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: 600;
+}
+.btnLink{
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+.input-text {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 16px !important;
+    line-height: 150% !important;
+    width: 100%;
+    background: $elColor;
+    border: 1px solid $elIcon;
+    border-radius: 4px;
+    padding: 15px;
+    color: $textHead;
+
+    &:disabled,
+    &[readonly="readonly"] {
+        color: $passive;
+    }
+
+    // Disabled label style
+    &:disabled+label,
+    &[readonly="readonly"]+label {
+        color: $passive;
+    }
+
+    // Focused input style
+    &:focus:not([readonly]) {
+        border: 1px solid $blue;
+    }
+
+    // Focused label style
+    &:focus:not([readonly])+label {
+        color: $textHead;
+    }
+    &:focus.valid ~ label {
+        color: $textHead !important;
+      }
+}
+.underline{
+    color: $blue;
+    padding-bottom: 1px;
+    border-bottom: 1px solid $blue;
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 500;
+    width: fit-content;
+}
+.btn-blue{
+    background-color: $blue;
+    box-shadow: none;
+    border-radius: 4px;
+    &:hover{
+        background: $blue;
+        box-shadow: 0px 4px 12px rgba(47, 128, 237, 0.24);
+    }
+}
+.btn-delete{
+    background-color: #fff;
+    box-shadow: none;
+    border: 1px solid $red;
+    color: $red;
+    border-radius: 4px;
+    &:hover, &:focus, &:active{
+        background: $liteRed;
+        box-shadow: none;
+    }
+}
+.close{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $elColor;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover{
+        background: $liteBlue;
+        svg{
+            path{
+                stroke: $blue;
+            }
+        }
+    }
+}
+.blue-underline{
+    color: $blue;
+    text-decoration: underline;
+}
+.header{
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    &__logo{
+        max-width: 102px;
+    }
+    &__left{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    &__right{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__profile{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $bgFrame;
+    }
+    &__username{
+        padding-top: 11px;
+        height: 48px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
+        color: #555;
+        margin: 0 20px 0 12px;
+        padding-right: 20px;
+        border-right: 1px solid $elIcon;
+    }
+    &__login{
+        width: 48px;
+        height: 48px;
+        background: $liteBlue;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__burger{
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 19px;
+        span{
+            transition: all 0.2s;
+            position: absolute;
+            background-color: $blue;
+            left: 15px;
+            width: 18px;
+            height: 2px;
+            top: 24px;
+        }
+        &::before, &::after{
+            content: "";
+            background-color: $blue;
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            left: 15px;
+            top: 29px;
+            transition: all 0.5s;
+        }
+        &::before{
+            top: 19.2px;
+            height: 2px;
+        }
+        &::after{
+            bottom: 0;
+            height: 2px;
+        } 
+    }
+    .burger-active{
+        span{
+            transform: scale(0);
+        }
+        &::before{
+            transform: rotate(45deg);
+            top: 23px;
+            height: 2px;
+        }
+        &::after{
+            transform: rotate(-45deg);
+            top: 23px;
+            height: 2px;
+        }
+    }
+}
+nav{
+    height: auto;
+    background: #fff;
+    box-shadow: none;
+}
+nav ul a {
+    color: $txt;
+    font-size: 16px;
+}
+nav ul a:hover {
+    background-color: transparent;
+}
+.burger{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $liteBlue;
+    cursor: pointer;
+    display: none;
+}
+.aside {
+    display: none;
+    padding: 20px 21px 20px 24px;
+    z-index: 10;
+    background: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;    
+}
+
+.aside--active{
+    display: block !important;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 80px;
+}
+.fixed-scroll{
+    overflow: hidden;
+}
+section{
+    width: 100%;
+    margin-top: 50px;
+}
+.main-section{
+    background: #FFFFFF;
+    margin: 50px 0;
+    border-radius: 8px;
+    padding: 30px;
+}
+.start-block{
+    height: calc(75vh - 50px);
+    &__inner{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__title{
+        margin: 30px 0 20px 0;
+    }
+    &__text{
+        margin-bottom: 30px;
+    }
+    .btn{
+        width: 220px;
+        text-transform: inherit;
+    }
+}
+.btn{
+    text-transform: inherit;
+    z-index: 0;
+}
+.pagination{
+    width: 100%;
+    display: none;
+    margin-bottom: 106px;
+    &__item{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 0.25rem;
+        color: $textHead;
+        svg{
+            path{
+                fill: $textHead;
+            }
+        }
+        &:hover{
+            background: $blue;
+            border-color: $blue;
+            color: #fff;
+            svg{
+                path{
+                    fill: #fff;
+                }
+            }
+        }
+    }
+    &__item--active{
+        background: $blue;
+        border-color: $blue;
+        color: #fff;
+    }
+    &__item:not(:last-child){
+        margin-right: 8px;
+    }
+    
+}
+.pagination-container{
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #C7CACB;
+}
+.desc-pagination{
+    display: flex;
+    justify-content: flex-end;
+}
+.breads{
+    &__nav{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: -10px;
+    }
+    &__list{
+        list-style: none;
+        position: relative;
+        &:not(:first-child){
+            margin-left: 11px;
+            &::before{
+                content:"\25CF";
+                font-size: 8px;
+                line-height: 0;
+                position: absolute;
+                top: 13px;
+                left: -7px;
+            }
+        }
+    }
+    &__link{
+        font-weight: 500;
+        font-size: 0.875em;
+        line-height: 143%;
+        letter-spacing: -0.5px;
+        color: $txt;
+        opacity: 0.6;
+        font-family: 'Lato', sans-serif;
+    }
+    &__link--active{
+        color: $textHead;
+        opacity: 1;
+    }
+}
+.company-cards{
+    cursor: pointer;
+    width: 49%;
+    background: #fff;
+    border-radius: 0.25rem;
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 30px 25px 44px 30px;
+
+    }
+    &__img{
+        padding: 10px;
+        border-radius: 50%;
+        border: 1px solid $bgFrame;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__logo{
+        width: 80px;
+        height: 80px;
+    }
+    &__mobi{
+        width: 65px;
+        height: 60px;
+    }
+    &__text{
+        margin-top: 15px;
+        width: 80%;
+        color: $txt;
+    }
+    &__footer{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 21px 25px 21px 30px;
+        border-top: 1px solid $bgFrame;
+    }
+    &__edit{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    &__edit--text{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 171%;
+        color: $txt;
+        text-transform: uppercase;
+    }
+}
+.company-all{
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 34px;
+        border-bottom: 1px solid $elIcon;
+    }
+    &__search{
+        display: flex;
+        align-items: center;
+        max-width: 444px;
+        width: 444px;
+        position: relative;
+        margin: 30px 0;
+        svg{
+            position: absolute;
+            top: 14.5px;
+            left: 10px;
+        }
+    }
+    .search-input{
+        width: 100%;
+        background: #fff;
+        color: #666666;
+        padding: 13.5px 44px;
+        border: 1px solid $elIcon;
+        border-radius: 0.25rem;
+    }
+    &__panel{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+}
+
+.company-cards--long{
+    width: 100%;
+}
+.company-cards__logo--long{
+    width: 140px;
+    height: 140px;
+}
+.input-field input[type=search]:focus:not(.browser-default){
+    color: #666666;
+    border: 1px solid $elIcon;
+}
+.input__wrapper {
+    width: 70%;
+}
+.input__file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.input__wrapper--inner {
+    height: 100%;
+    padding: 20px;
+    border-right: 1px dashed $elIcon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input__file-icon-wrapper {
+    // height: 120px;
+    // width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input__file-button-text {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    line-height: 150%;
+    max-width: 218px;
+}
+.input__file--container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.input__file-button {
+    width: 100%;
+    height: 160px;
+    background: $elColor;
+    border: 1px dashed $elIcon;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.inputs-block{
+    margin-top: 24px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    .input-field{
+        width: 32%;
+    }
+}
+
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: none;
+    background: rgba($color: $textHead, $alpha: .3);
+    border: none;
+    box-shadow: none;
+    &__container{
+        position: relative;
+        overflow: hidden;
+        width: 70%;
+        padding: 30px;
+        background: #fff;
+        border-radius: 0.25rem;
+    }
+    &__close{
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        cursor: pointer;
+    }
+    &__btn{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        button{
+            width: 186px;
+        }
+    }
+}
+.modal-active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide-block{
+    display: none;
+}
+.active{
+    display: flex;
+}
+.aside{
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__box{
+        display: flex;
+        align-items: center;
+        gap: 17px;
+    }
+    &__username{
+        color: $textHead;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+    }
+    &__item{
+        padding: 20px 0;
+        border-top: 1px solid $elIcon;
+        border-radius: 2px;
+    }
+    &__ul{
+        display: flex;
+        flex-direction: column;
+        li{
+            a{
+                font-weight: 500;
+                font-size: 30px;
+                line-height: 127%;
+                color: $textHead;
+            }
+        }
+    }
+    &__profile{
+        width: 80px;
+        height: 80px;
+    }
+}
+@media screen and (max-width: 1201px){
+    .company-cards{
+        &__footer{
+            gap: 20px;
+        }
+        &__box{
+            width: 48%;
+        }
+    }
+}
+@media screen and(max-width: 1100px){
+    .company-cards{
+        width: 100%;
+    }
+    .inputs-block .input-field {
+        width: 48%;
+    }
+}
+@media screen and(max-width: 835px){
+    .input__wrapper {
+        width: 100%;
+    }       
+    .company-cards{
+        padding: 0;
+    }
+}
+@media screen and (max-width: 500px){
+    .company-all__header{
+        align-items: inherit;
+        gap: 20px;
+        flex-direction: column;
+    }
+    .inputs-block .input-field {
+        width: 100%;
+    }
+    .company-all__search{
+        width: 100%;
+    }
+}
+@media screen and(max-width: 475px){
+    .header__profile, .header__username, .header__login{
+        display: none;
+    }
+    .burger{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .top-header{
+        margin-top: 120px;
+    }
+    .header{
+        z-index: 8;
+        position: fixed;
+        top: 0;
+        left: 0;
+        &__nav{
+            display: none;
+        }
+    }
+    .main-section{
+        padding: 24px;
+    }
+    .company-cards{
+        &__header{
+            flex-direction: column;
+        }
+        &__text{
+            width: 100%;
+        }
+        &__box{
+            width: 100%;
+        }
+    }
+}

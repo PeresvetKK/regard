@@ -1,0 +1,108 @@
+@import './rootStyles/main.scss';
+.wrapper{
+    margin-bottom: 50px;
+}
+.authorization{
+    display: flex;
+    justify-content: center;
+    &__block{
+        padding: 30px 40px;
+        width: 484px;
+        background: #FFFFFF;
+        border-radius: 8px;
+    }
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #D9D9D9;;
+        margin-bottom: 25px;
+    }
+    &__title{
+        margin-bottom: 20px;
+    }
+    &__subtitle{
+        color: #666666;
+        margin-bottom: 30px;
+    }
+    &__dase{
+        cursor: pointer;
+    }
+    &__form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        .input-field{
+            width: 100%;
+        }
+        .authorization__login{
+            width: 100%;
+            button{
+                width: 100%;
+            }
+        }
+    }
+}
+.hide-block{
+    display: none;
+}
+.active{
+    display: flex;
+}
+.modal__container{
+    width: initial;
+    max-width: 484px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .send-form{
+        width: 70%;
+        text-align: center;
+        margin: 20px 0 30px 0;
+        color: #666666;
+        &__email{
+            font-weight: 600;
+        }
+    }
+    .modal__btn{
+        width: 100%;
+        button{
+            width: 100%;
+        }
+    }
+}
+@media screen and(max-width: 480px){
+    .header{
+        display: none;
+    }
+    .authorization{
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .authorization__block{
+        height: 100%;
+        width: 100%;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .modal__container{
+        padding: 20px;
+    }
+    .modal__container .send-form{
+        width: 100%;
+    }
+
+}

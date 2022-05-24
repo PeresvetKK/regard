@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Index Page</title>
+</head>
+<body id="root">
+    <div class="wrapper" style="margin-top: 50px;">
+        <div class="input-field" style="margin-bottom: 50px;">
+            <input placeholder="Placeholder" id="first_name" type="text" class="validate input-text">
+            <label for="first_name" class="active">First Name</label>
+        </div>
+    
+        <div class="input-field" style="margin-bottom: 50px;">
+            <input disabled="" value="I am not editable" id="disabled" type="text" class="validate input-text">
+            <label for="disabled" class="active">Disabled</label>
+        </div>
+
+        <button class="btn waves-effect waves-light btn-blue btnL" type="submit" name="action">Сохранить</button>
+        <button class="btn waves-effect waves-light btn-blue btnL disabled" type="submit" name="action">Сохранить</button>
+        <button class="btn waves-effect waves-light btn-delete btnL" type="submit" name="action">Сохранить</button>
+
+        <div class="close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3333 21.3333L10.6667 10.6666" stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.3333 10.6666L10.6666 21.3333" stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                
+        </div>
+
+        <div class="pagination-container">
+            <div class="pagination desc-pagination">
+                <a href="#" class="pagination__item prev-page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 6.85755C15 7.05126 14.9186 7.24583 14.7514 7.40611L9.95601 12.0097L14.579 16.6057C14.9507 16.9734 14.8779 17.5134 14.4161 17.8108C13.9554 18.1074 13.2815 18.0491 12.9098 17.6796L7.73721 12.5369C7.41687 12.2197 7.42116 11.7646 7.749 11.4509L13.1058 6.30813C13.484 5.94471 14.1601 5.89586 14.6143 6.19842C14.8682 6.36813 15 6.61156 15 6.85755Z" fill="#555555"></path>
+                    <mask id="mask0_759_66886" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="7" y="6" width="8" height="12">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 6.85755C15 7.05126 14.9186 7.24583 14.7514 7.40611L9.95601 12.0097L14.579 16.6057C14.9507 16.9734 14.8779 17.5134 14.4161 17.8108C13.9554 18.1074 13.2815 18.0491 12.9098 17.6796L7.73721 12.5369C7.41687 12.2197 7.42116 11.7646 7.749 11.4509L13.1058 6.30813C13.484 5.94471 14.1601 5.89586 14.6143 6.19842C14.8682 6.36813 15 6.61156 15 6.85755Z" fill="white"></path>
+                    </mask>
+                    <g mask="url(#mask0_759_66886)">
+                    </g>
+                </svg></a>
+                <a href="#" class="pagination__item">1</a>
+                <a href="#" class="pagination__item pagination__item--active">2</a>
+                <a href="#" class="pagination__item">3</a>
+                <a href="#" class="pagination__item">...</a>
+                <a href="#" class="pagination__item">12</a>
+                <a href="#" class="pagination__item" id="next-page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 17.1424C9 16.9487 9.08142 16.7542 9.24856 16.5939L14.044 11.9903L9.42105 7.39433C9.04928 7.02662 9.12213 6.48663 9.58389 6.18921C10.0446 5.89264 10.7185 5.95093 11.0902 6.32035L16.2628 11.4631C16.5831 11.7803 16.5788 12.2354 16.251 12.5491L10.8942 17.6919C10.516 18.0553 9.83995 18.1041 9.38569 17.8016C9.13178 17.6319 9 17.3884 9 17.1424Z" fill="white"></path>
+                    <mask id="mask0_759_66889" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="9" y="6" width="8" height="12">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 17.1424C9 16.9487 9.08142 16.7542 9.24856 16.5939L14.044 11.9903L9.42105 7.39433C9.04928 7.02662 9.12213 6.48663 9.58389 6.18921C10.0446 5.89264 10.7185 5.95093 11.0902 6.32035L16.2628 11.4631C16.5831 11.7803 16.5788 12.2354 16.251 12.5491L10.8942 17.6919C10.516 18.0553 9.83995 18.1041 9.38569 17.8016C9.13178 17.6319 9 17.3884 9 17.1424Z" fill="white"></path>
+                    </mask>
+                    <g mask="url(#mask0_759_66889)">
+                    </g>
+                </svg></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

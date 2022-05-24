@@ -1,0 +1,33 @@
+@import './company-info.scss';
+
+.company-cards__mobi{
+    width: 140px;
+    height: 140px;
+}
+.company-cards__img{
+    background: $elColor;
+    border: 1px solid $bgFrame;
+}
+.company-cards__header{
+    padding-left: 0;
+    padding-right: 0;
+}
+.company-cards__footer{
+    padding-left: 0;
+    padding-right: 0;
+}
+@media screen and(max-width: 480px){
+    .company-cards{
+        &__text{
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        &__img{
+            width: 100%;
+            border-radius: 0.25rem;
+        }
+        &__sub{
+            font-size: 14px;
+        }
+    }
+}

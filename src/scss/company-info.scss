@@ -1,0 +1,83 @@
+@import './rootStyles/main.scss';
+// .company-cards__footer{
+//     // justify-content: flex-start;
+// }
+.company-cards{
+    &__sub{
+        color: $txt;
+    }
+    &__sup{
+        color: $textHead;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+.objects{
+    margin-bottom: 50px;
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+.company-all__header{
+    border: none;
+}
+.objects-item{
+    width: 32.2%;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    padding: 30px;
+    img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    &__header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    &__text{
+        color: $txt;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $bgFrame;
+    }
+    &__date{
+        padding-top: 15px;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}
+.input__wrapper {
+    width: 100%;
+    margin-top: 28px;
+    margin-bottom: 30px;
+}
+.inputs-block{
+    justify-content: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $bgFrame;
+    margin-bottom: 30px;
+}
+.inputs-block .input-field {
+    width: 48%;
+}
+@media screen and(max-width: 1200px){
+    .objects-item{
+        width: 32%;
+    }
+}
+@media screen and(max-width: 832px){
+    .objects-item{
+        width: 48%;
+    }
+}
+@media screen and(max-width: 476px){
+    .objects-item{
+        width: 100%;
+    }
+}
