@@ -8816,36 +8816,192 @@ textarea {
             order: 1;
   }
 }
-.company-card {
-  border-bottom: 1px solid #F5F6F8;
-  padding-bottom: 30px;
-}
-.company-card__header {
+.comp-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
+}
+.comp-inner__date {
+  margin-bottom: 15px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.comp-inner__title {
+  margin-bottom: 10px;
+}
+.comp-inner__adress {
+  margin-bottom: 50px;
+}
+.comp-inner__left {
+  margin-top: 30px;
+}
+.comp-inner__right img {
+  border-radius: 0.25rem;
+}
+.monitoring {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+.monitoring__section {
+  margin-top: 0;
+  padding-top: 0;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+.monitoring__block {
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1px solid #C2CFE0;
+}
+.monitoring__picturebox {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-gap: 20px;
+  gap: 20px;
+}
+.monitoring__pictureitem {
+  width: 49%;
+}
+.monitoring__pictureitem img {
+  margin-bottom: 18px;
+}
+.monitoring__text {
+  padding-top: 20px;
+}
+.moni-block__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.moni-block__textbox {
+  width: 24%;
+}
+.moni-block__text {
+  font-weight: 600;
+  color: #555;
+  margin: 0;
+  margin-top: 8px;
+}
+.moni-block__title {
+  margin-bottom: 20px;
+}
+.moni-block__imagebox {
+  padding: 44px 0;
+  border: 1px solid #C2CFE0;
+  margin: 20px 0;
+}
+.table-container {
   margin-bottom: 30px;
 }
-.button-panel--company {
-  margin-top: 30px;
+.btn__svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  grid-gap: 8px;
+  gap: 8px;
 }
-.btn__companycard {
-  width: 200px;
+@media screen and (max-width: 1205px) {
+  .moni-block__box {
+    grid-gap: 20px;
+    gap: 20px;
+  }
+  .moni-block__textbox {
+    width: 48%;
+  }
+}
+@media screen and (max-width: 835px) {
+  .comp-inner__title {
+    font-size: 30px;
+  }
+
+  .comp-inner__adress {
+    margin-bottom: 30px;
+  }
+
+  .monitoring__pictureitem {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 475px) {
+  .comp-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin-top: 20px;
+  }
+
+  .moni-block__title {
+    font-size: 20px;
+  }
+
+  .comp-inner__title {
+    font-size: 24px;
+  }
+
+  .comp-inner__adress {
+    font-size: 14px;
+  }
+
+  .btn__svg {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .monitoring__title {
+    font-size: 24px;
+  }
+
+  .textM {
+    font-size: 14px;
+  }
+
+  .comp-inner__right {
+    margin-top: 45px;
+  }
+
+  .comp-inner__left {
+    margin-top: 0px;
+  }
+
+  .wrapper {
+    margin-top: 110px;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+
+  th, td {
+    min-width: 200px;
+  }
 }
 .air-datepicker-cell.-day-.-other-month-, .air-datepicker-cell.-year-.-other-decade- {
   color: var(--adp-color-other-month);

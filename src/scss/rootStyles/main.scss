@@ -2,6 +2,7 @@
 @import "media";
 @import "mixins";
 @import "root";
+
 // font-family: 'Inter', sans-serif;
 // font-family: 'Roboto', sans-serif;
 * {
@@ -18,6 +19,20 @@ body {
     background: $bgFrame;
     cursor: default;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scrollbar-color: transparent $blue;
+}
+
+::-webkit-scrollbar {
+    width: 4px;  
+    height: 4px;             /* ширина scrollbar */
+}
+::-webkit-scrollbar-track {
+    background: #fff;        /* цвет дорожки */
+}
+::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border: 0; 
+    border-radius: 20px;
 }
 section {
     position: relative;
@@ -77,6 +92,9 @@ input {
     outline: none;
     box-shadow: none;
     transition: box-shadow .3s, border .3s;
+    &::placeholder{
+        color: $textHead;
+    }
 }
 
 textarea,
@@ -151,6 +169,9 @@ button {
     font-weight: 500;
     text-decoration-line: underline;
 }
+.light-text{
+    color: $txt;
+}
 .input-text {
     font-family: "Roboto", sans-serif !important;
     font-size: 16px !important;
@@ -204,15 +225,74 @@ button {
         box-shadow: 0px 4px 12px rgba(47, 128, 237, 0.24);
     }
 }
+.btnM{
+    width: 180px;
+}
+.btnX{
+    width: 200px;
+}
+th{
+    background: $elColor;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: $textHead;
+}
+td,th {
+    padding: 18px 16px;
+}
+select{
+    height: 56px;
+    padding: 16px;
+    background: #FAFAFB;
+    border: 1px solid #C2CFE0;
+    border-radius: 4px;
+    color: #555;
+    outline: none;
+    appearance: none;
+}
+.select-box{
+    &::after{
+        content: '';
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 17px;
+        right: 14px;
+        background-image: url("/img/arrow_Down.svg");
+        background-repeat: no-repeat;
+        background-position-x: calc(100% - 8px);
+    }
+}
+.table-container{
+    border: 1px solid #E5E8ED;
+    border-bottom: none;
+}
 .btn-delete{
     background-color: #fff;
     box-shadow: none;
     border: 1px solid $red;
     color: $red;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover, &:focus, &:active{
         background: $liteRed;
         box-shadow: none;
+    }
+}
+.svg-date{
+    position: relative;
+    input{
+        padding-left: 50px;
+    }
+    svg{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 16px;
+        top: 16px;
     }
 }
 .close{
@@ -236,6 +316,36 @@ button {
 .blue-underline{
     color: $blue;
     text-decoration: underline;
+}
+.tabs{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid $elIcon;
+    z-index: 2;
+
+    &__item{
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 288%;
+        color: #D4D4D4;
+        padding: 0 24px;
+        border-bottom: 2px solid transparent;
+        z-index: 4;
+    }
+    &__item--active{
+        color: $blue;
+        border-bottom: 2px solid $blue;
+    }
+}
+.tab-content{
+    display: none;
+}
+.tab-content.active{
+    display: flex;
+    flex-direction: column;
 }
 .header{
     width: 100%;
@@ -350,6 +460,13 @@ nav ul a {
 nav ul a:hover {
     background-color: transparent;
 }
+.breads-menu{
+    display: flex;
+    justify-content: space-between;
+}
+.breads{
+    margin-bottom: 20px;
+}
 .burger{
     width: 48px;
     height: 48px;
@@ -412,6 +529,24 @@ section{
 .btn{
     text-transform: inherit;
     z-index: 0;
+    height: 48px;
+}
+textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    background: $elColor;
+    border: 1px solid $elIcon;
+    border-radius: 0.25rem;
+    outline: none;
+    min-height: 100px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $textHead;
+    padding: 15px;
+}
+.textarea--big{
+    min-height: 200px;
 }
 .pagination{
     width: 100%;
@@ -601,6 +736,15 @@ section{
     width: 140px;
     height: 140px;
 }
+
+.chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+
+
 .input-field input[type=search]:focus:not(.browser-default){
     color: #666666;
     border: 1px solid $elIcon;
@@ -750,6 +894,20 @@ section{
         height: 80px;
     }
 }
+.air-datepicker-global-container{
+    z-index: 100;
+}
+.air-datepicker--navigation{
+    width: 97%;
+}
+.air-datepicker-nav--title{
+    font-size: 18px;
+    color: $textHead;
+}
+.air-datepicker-nav--title i{
+    font-size: 18px;
+}
+
 @media screen and (max-width: 1201px){
     .company-cards{
         &__footer{
@@ -775,6 +933,16 @@ section{
     .company-cards{
         padding: 0;
     }
+    .chartWrapper {
+        position: relative;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .chartAreaWrapper {
+        width: 727px;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
 }
 @media screen and (max-width: 500px){
     .company-all__header{
@@ -787,6 +955,9 @@ section{
     }
     .company-all__search{
         width: 100%;
+    }
+    .desc-pagination{
+        justify-content: center;
     }
 }
 @media screen and(max-width: 475px){
@@ -823,5 +994,8 @@ section{
         &__box{
             width: 100%;
         }
+    }
+    .last-item{
+        order: 1;
     }
 }
